@@ -47,7 +47,7 @@ const gameExecution = async () => {
     console.log(`Signature of payment for playing the game ${chalk.green(await transferSol(userWallet, treasuryWallet, answers.stakeAmount))}`)
     if (answers.random == randomNumber(1, 5)) {
         console.log(chalk.green`Your guess is absolutely correct`)
-        console.log(`Here is the price signature ${chalk.green(await transferSol(userWallet, treasuryWallet, getReturnAmount(answers.stakeAmount)))}`)
+        console.log(`Here is the price signature ${chalk.green(await transferSol(treasuryWallet, userWallet, getReturnAmount(answers.stakeAmount)))}`)
     } else {
         console.log(chalk.yellow`Better Luck next time`)
     }
